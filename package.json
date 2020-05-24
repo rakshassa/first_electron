@@ -1,0 +1,24 @@
+{
+  "name": "practice",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "description": "first time dev",
+  "repository": {
+    "type": "git",
+    "url": "first_electron"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.0"
+  },
+  "dependencies": {
+    "pg": "^8.2.1"
+  }
+}

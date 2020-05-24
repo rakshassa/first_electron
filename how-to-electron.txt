@@ -1,0 +1,51 @@
+1. Install Node.js
+
+2. create a new project directory (empty)
+3. npm init
+4. Edit package.json to include:
+  "scripts": {
+    "start": "electron ."
+  },
+5. npm install --save-dev electron
+6. Create main.js to startup the application
+7. Create index.html to show on your first page.
+8. npm start
+
+===========================
+
+Connecting a postgres database
+
+1. Install postgresql for windows
+2. npm install pg
+3. use PGAdmin4 to create a user, a database, and the tables.
+	-- make sure your user has permissions to view/edit your database and tables.
+4. Open a connection to the database
+  const { Client } = require('pg')
+  const client = new Client({
+    user: 'electron_user',
+    host: 'localhost',
+    database: 'electron_db',
+    password: 'fake_password',
+    port: 5432
+  })
+5. Now you can query the database from javascript.
+
+
+============================
+
+Reading and writing the database from HTML
+
+0.  include your script tags in the <head> of your index.html file.
+		<script src="database.js"></script>
+1.  Add your html form in index.html
+2.  Map the onclick attribute of your form buttons to javascript methods.
+		onclick="save_to_db();"
+3.  In your javascript methods, read and write to the database.
+
+===========================
+
+to Test this example project:
+
+1.  run it with npm start
+2.  fill in the name and email fields and click "subscribe" -- now that user is saved in the database
+3.  fill in the name field in the lookup section and click "lookup"  -- now that user's email should be auto-filled.

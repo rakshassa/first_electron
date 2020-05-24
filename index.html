@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>First Electron App</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script src="database.js"></script>
+  </head>
+  <body>
+    <h1>Use this form to save new users into your database</h1>
+    <form class="new_subscription" id="new_subscription" action="/subscriptions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+      <div class="row">
+
+
+        <div class="col-12">
+          <label class="font-weight-bold" for="subscription_name">Name</label>
+          <div class="input-group input-group-lg">
+            <input placeholder=" Your Name " class="form-control input-lg" type="text" name="subscription[name]" id="subscription_name" />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="font-weight-bold" for="subscription_email">Email</label>
+          <div class="input-group input-group-lg">
+            <input placeholder=" Your Email Address " class="form-control input-lg" type="text" name="subscription[email]" id="subscription_email" />
+          </div>
+        </div>
+
+
+      </div>
+      <input id="subscription_save" type="button" onclick="save_to_db();" value="Subscribe" class="btn my-2" style="background: #AF32B2; color: white;" />
+    </form>
+
+    <h1>Use this form to lookup users FROM your database</h1>
+    <form class="find_user" id="find_user_id" action="/user" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+      <div class="row">
+
+
+        <div class="col-12">
+          <label class="font-weight-bold" for="lookup_name">Name</label>
+          <div class="input-group input-group-lg">
+            <input placeholder=" Your Name " class="form-control input-lg" type="text" name="Lookup[name]" id="lookup_name" />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="font-weight-bold" for="lookup_email">Email</label>
+          <div class="input-group input-group-lg">
+            <input placeholder=" Your Email Address " class="form-control input-lg" type="text" name="Lookup[email]" id="lookup_email" disabled/>
+          </div>
+        </div>
+
+
+      </div>
+      <input id="subscription_read" type="button" onclick="read_from_db();" value="Lookup" class="btn my-2" style="background: #AF32B2; color: white;"  />
+    </form>
+  </body>
+</html>
